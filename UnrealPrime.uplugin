@@ -1,0 +1,23 @@
+{
+	"FileVersion" : 1,
+	
+	"FriendlyName" : "Unreal Prime",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "E.R. 'Wail' Whiting",
+	"CreatedByURL" : "http://www.unrealprime.com",
+	"EngineVersion" : "4.11.0",
+	"Description" : "Unreal Prime Mutator",
+	"Category" : "UnrealTournament.Mutator",
+	"EnabledByDefault" : true,
+	"CanContainContent" : true,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "UnrealPrime",
+			"Type" : "Runtime",
+			"WhitelistPlatforms" : [ "Win32", "Win64", "Linux" ]
+		}
+	]
+}
