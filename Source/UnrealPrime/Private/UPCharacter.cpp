@@ -48,16 +48,35 @@ void AUPCharacter::BeginPlay()
 	DefaultBaseEyeHeight = UP_DefaultBaseEyeHeight;
 	CharacterCameraComponent->SetRelativeLocation(FVector(0.f, 0.f, DefaultBaseEyeHeight), false);
 	
-	if (GetCapsuleComponent() && DefaultPawnCollisionRadius != 0 && DefaultPawnCollisionHalfHeight != 0)
-	{
-		GetCapsuleComponent()->SetCapsuleSize(DefaultPawnCollisionRadius, DefaultPawnCollisionHalfHeight);
+	//if (GetCapsuleComponent() && DefaultPawnCollisionRadius != 0 && DefaultPawnCollisionHalfHeight != 0)
+	//{
+	//	GetCapsuleComponent()->SetCapsuleSize(DefaultPawnCollisionRadius, DefaultPawnCollisionHalfHeight);
 		
 		// For default UTCharacter mesh ... 
 		//Mesh.Location.Z = -1 * DefaultPawnCollisionHalfHeight;
-	}
+	//}
 }
 
-//
+
+void AUPCharacter::UP_DeactivateSpawnProtection()
+{
+	DeactivateSpawnProtection();
+}
+
+bool AUPCharacter::CanBlockTelefrags()
+{
+	if (UP_CanBlockTelefrags())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool AUPCharacter::UP_CanBlockTelefrags_Implementation()
+{
+	return false;
+}
 
 void AUPCharacter::UP_SetHatClass(TSubclassOf<AUTHat> HatClass)
 {
